@@ -51,7 +51,7 @@
     { id: 'montant_total', x: 515, y: 676, w: 104, h: 16, size: 10, align: 'right' },
 
     // Modalités
-    { id: 'acompte', x: 831, y: 192, w: 101, h: 14, size: 10, align: 'right' },
+    { id: 'acompte', x: 831, y: 194, w: 101, h: 14, size: 10, align: 'right' },
     { id: 'solde', x: 958, y: 213, w: 102, h: 14, size: 10, align: 'right' },
     { id: 'organisme_bancaire', x: 752, y: 297, w: 99, h: 13, size: 9 },
     { id: 'banque_adresse', x: 920, y: 297, w: 143, h: 13, size: 9 },
