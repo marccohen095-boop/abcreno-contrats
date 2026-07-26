@@ -61,8 +61,8 @@
     { id: 'montant_pret', x: 876, y: 368, w: 60, h: 14, size: 9 },
     { id: 'nb_echeances', x: 758, y: 384, w: 90, h: 14, size: 9 },
     { id: 'montant_echeances', x: 966, y: 384, w: 70, h: 14, size: 9 },
-    { id: 'date_installation', x: 750, y: 495, w: 180, h: 15, size: 10, inputType: 'date' },
-    { id: 'fait_a', x: 689, y: 662, w: 140, h: 15, size: 10 },
+    { id: 'date_installation', x: 750, y: 493, w: 180, h: 15, size: 10, inputType: 'date' },
+    { id: 'fait_a', x: 689, y: 660, w: 140, h: 15, size: 10 },
     { id: 'date_signature', x: 1001, y: 662, w: 101, h: 15, size: 10, inputType: 'date', prefillToday: true },
 
     // Cases à cocher
