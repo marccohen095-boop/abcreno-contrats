@@ -1,0 +1,17 @@
+{
+  "name": "abcReno — Contrats interactifs",
+  "short_name": "abcReno",
+  "description": "Création et signature des bons de commande abcReno.",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#11171d",
+  "theme_color": "#11171d",
+  "icons": [
+    {
+      "src": "assets/app-icon-square.png",
+      "sizes": "1856x1856",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ]
+}

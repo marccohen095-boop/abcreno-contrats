@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#11171d">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="abcReno">
+  <title>abcReno — Contrats interactifs</title>
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="apple-touch-icon" href="assets/app-icon-square.png">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="app-locked">
+  <section class="access-gate" id="access-gate" aria-labelledby="access-title">
+    <div class="gate-decoration gate-decoration-one"></div>
+    <div class="gate-decoration gate-decoration-two"></div>
+    <form class="access-card" id="access-form" autocomplete="off">
+      <div class="access-brand">
+        <img src="assets/app-logo.png" alt="Logo ABC Reno">
+        <span>ACCÈS SÉCURISÉ</span>
+      </div>
+      <h1 id="access-title">Vos contrats,<br>prêts sur l’iPad.</h1>
+      <p>Saisissez votre code à 4 chiffres pour ouvrir l’éditeur abcReno.</p>
+      <label for="access-code">Code d’accès</label>
+      <div class="access-code-row">
+        <input id="access-code" name="access-code" type="password" inputmode="numeric" pattern="[0-9]*" maxlength="4" aria-describedby="access-message" autofocus>
+        <button type="submit" aria-label="Ouvrir l’application">→</button>
+      </div>
+      <span class="access-message" id="access-message" aria-live="polite">4 chiffres</span>
+      <div class="access-rule"></div>
+      <small>ABC RENO · CONTRATS INTERACTIFS</small>
+    </form>
+  </section>
+
+  <header class="topbar">
+    <div class="brand">
+      <img class="brand-logo" src="assets/app-logo.png" alt="Logo ABC Reno">
+      <div>
+        <strong>abcReno</strong>
+        <span>Bon de commande interactif</span>
+      </div>
+    </div>
+
+    <nav class="actions" aria-label="Actions du document">
+      <button class="button quiet" id="toggle-zones" type="button" aria-pressed="false">
+        <span class="button-icon">◫</span> Zones
+      </button>
+      <div class="zoom-group" aria-label="Zoom">
+        <button class="icon-button" id="zoom-out" type="button" aria-label="Réduire">−</button>
+        <button class="zoom-value" id="zoom-fit" type="button" title="Adapter à la largeur">100 %</button>
+        <button class="icon-button" id="zoom-in" type="button" aria-label="Agrandir">+</button>
+      </div>
+      <button class="button quiet danger" id="reset" type="button">
+        <span class="button-icon">↺</span> Réinitialiser
+      </button>
+      <button class="button quiet" id="download" type="button">
+        <span class="button-icon">⇩</span> Télécharger le PDF
+      </button>
+      <button class="button primary" id="share" type="button">
+        <span class="button-icon">↗</span> Envoyer au client
+      </button>
+    </nav>
+  </header>
+
+  <main class="workspace">
+    <aside class="status-card" aria-live="polite">
+      <span class="status-dot"></span>
+      <div>
+        <strong id="status-title">Brouillon enregistré</strong>
+        <span id="status-detail">Vos modifications restent sur cet ordinateur.</span>
+      </div>
+    </aside>
+
+    <section class="document-shell" aria-label="Éditeur du bon de commande">
+      <div class="page-viewport" id="page-viewport">
+        <div class="page-frame" id="page-frame">
+          <div class="pdf-page" id="pdf-page">
+            <img src="assets/modele-apercu.png" alt="Modèle original du bon de commande abcReno" draggable="false">
+            <div id="field-layer" class="field-layer"></div>
+            <button class="signature-zone adviser-signature" data-signature="adviser" type="button" aria-label="Ajouter la signature du conseiller">
+              <span>Signer ici</span>
+              <img alt="Signature du conseiller">
+            </button>
+            <button class="signature-zone client-signature" data-signature="client" type="button" aria-label="Ajouter la signature du client">
+              <span>Signature client</span>
+              <img alt="Signature du client">
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <dialog id="signature-dialog" class="signature-dialog">
+    <form method="dialog">
+      <header>
+        <div>
+          <span class="eyebrow">SIGNATURE</span>
+          <h2 id="signature-title">Signature</h2>
+        </div>
+        <button class="dialog-close" value="cancel" aria-label="Fermer">×</button>
+      </header>
+      <p>Signez avec la souris, le doigt ou un stylet.</p>
+      <div class="signature-pad-wrap">
+        <canvas id="signature-pad" width="900" height="280"></canvas>
+        <span class="signature-line"></span>
+      </div>
+      <footer>
+        <button class="button quiet" id="clear-signature" type="button">Effacer</button>
+        <button class="button primary" id="save-signature" type="button">Valider la signature</button>
+      </footer>
+    </form>
+  </dialog>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script src="vendor/pdf-lib.min.js"></script>
+  <script src="login-gate.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
