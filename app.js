@@ -53,9 +53,9 @@
     // Modalités
     { id: 'acompte', x: 831, y: 198, w: 101, h: 14, size: 10, align: 'right' },
     { id: 'solde', x: 940, y: 219, w: 90, h: 14, size: 10, align: 'right' },
-    { id: 'organisme_bancaire', x: 752, y: 297, w: 99, h: 13, size: 9 },
-    { id: 'banque_adresse', x: 920, y: 297, w: 143, h: 13, size: 9 },
-    { id: 'banque_cp', x: 1090, y: 297, w: 77, h: 13, size: 9 },
+    { id: 'organisme_bancaire', x: 752, y: 306, w: 99, h: 13, size: 9 },
+    { id: 'banque_adresse', x: 920, y: 306, w: 143, h: 13, size: 9 },
+    { id: 'banque_cp', x: 1090, y: 306, w: 77, h: 13, size: 9 },
     { id: 'teg', x: 777, y: 351, w: 154, h: 14, size: 9 },
     { id: 'taux_nominal', x: 720, y: 368, w: 73, h: 14, size: 9 },
     { id: 'montant_pret', x: 876, y: 368, w: 60, h: 14, size: 9 },
