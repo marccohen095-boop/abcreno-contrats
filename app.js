@@ -47,8 +47,8 @@
     { id: 'ligne_libre_3', x: 112, y: 568, w: 470, h: 13, size: 9 },
     { id: 'ligne_libre_4', x: 112, y: 612, w: 470, h: 13, size: 9 },
     { id: 'remise', x: 113, y: 627, w: 469, h: 13, size: 9 },
-    { id: 'taux_tva', x: 384, y: 678, w: 56, h: 15, size: 8.5, align: 'center' },
-    { id: 'montant_total', x: 541, y: 678, w: 82, h: 15, size: 9, align: 'right' },
+    { id: 'taux_tva', x: 377, y: 676, w: 27, h: 16, size: 10, align: 'center' },
+    { id: 'montant_total', x: 515, y: 676, w: 104, h: 16, size: 10, align: 'right' },
 
     // Modalités
     { id: 'acompte', x: 831, y: 192, w: 101, h: 14, size: 10, align: 'right' },
@@ -139,10 +139,6 @@
     toitureRow.textContent = 'Réfection Toiture complète : ........................................................................';
     fieldLayer.appendChild(toitureRow);
 
-    const priceRow = document.createElement('div');
-    priceRow.className = 'price-row-replacement';
-    priceRow.innerHTML = '<span class="price-tva-label">TAUX TVA :</span><span class="price-percent">%</span><span class="price-total-label">Montant total TTC</span>';
-    fieldLayer.appendChild(priceRow);
   }
 
   function positionElement(element, field) {
@@ -346,7 +342,6 @@
     const pdfDoc = await PDFDocument.load(source);
     const page = pdfDoc.getPages()[0];
     const font = await pdfDoc.embedFont(StandardFonts.Helvetica);
-    const boldFont = await pdfDoc.embedFont(StandardFonts.HelveticaBold);
     const form = pdfDoc.getForm();
 
     // Remplace proprement la ligne toiture par Biosourcé, puis descend la toiture.
@@ -372,29 +367,6 @@
       color: rgb(.08,.08,.08)
     });
     page.drawRectangle({ x: 51, y: PAGE_H - 535, width: 13, height: 13, borderColor: rgb(.08,.08,.08), borderWidth: .8 });
-
-    // Reconstruit le bandeau TVA avec une grande zone de saisie.
-    page.drawRectangle({
-      x: 328,
-      y: PAGE_H - 696,
-      width: 299,
-      height: 21,
-      color: rgb(1, 1, 1),
-      borderColor: rgb(.08, .08, .08),
-      borderWidth: .8
-    });
-    page.drawRectangle({
-      x: 450,
-      y: PAGE_H - 696,
-      width: 88,
-      height: 21,
-      color: rgb(.79, .06, .08),
-      borderColor: rgb(.08, .08, .08),
-      borderWidth: .8
-    });
-    page.drawText('TAUX TVA :', { x: 333, y: PAGE_H - 690, size: 8.5, font: boldFont, color: rgb(.34, .34, .34) });
-    page.drawText('%', { x: 443, y: PAGE_H - 690, size: 8.5, font: boldFont, color: rgb(.34, .34, .34) });
-    page.drawText('Montant total TTC', { x: 456, y: PAGE_H - 690, size: 8.5, font: boldFont, color: rgb(1, 1, 1) });
 
     fields.filter(field => field.type !== 'check').forEach(field => {
       const textField = form.createTextField(field.id);

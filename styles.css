@@ -274,38 +274,6 @@ button { cursor: pointer; }
 .biosource-row { top: 522px; }
 .toiture-row { top: 538px; }
 
-.price-row-replacement {
-  position: absolute;
-  left: 328px;
-  top: 675px;
-  width: 299px;
-  height: 21px;
-  z-index: 0;
-  border: 1px solid #171717;
-  background: #fff;
-  color: #555;
-  font-family: "Helvetica Neue", Helvetica, sans-serif;
-  font-size: 8.5px;
-  font-weight: 800;
-  pointer-events: none;
-}
-.price-tva-label { position: absolute; left: 5px; top: 5px; }
-.price-percent { position: absolute; left: 114px; top: 5px; }
-.price-total-label {
-  position: absolute;
-  left: 121px;
-  top: -1px;
-  width: 89px;
-  height: 21px;
-  display: grid;
-  place-items: center;
-  color: white;
-  background: #ca1a20;
-  border-left: 1px solid #171717;
-  border-right: 1px solid #171717;
-  font-size: 8.5px;
-}
-
 .signature-zone {
   position: absolute;
   border: 1.3px dashed rgba(214,41,47,.48);
