@@ -51,16 +51,16 @@
     { id: 'montant_total', x: 515, y: 676, w: 104, h: 16, size: 10, align: 'right' },
 
     // Modalités
-    { id: 'acompte', x: 831, y: 198, w: 101, h: 14, size: 10, align: 'right' },
-    { id: 'solde', x: 940, y: 219, w: 90, h: 14, size: 10, align: 'right' },
-    { id: 'organisme_bancaire', x: 752, y: 306, w: 99, h: 13, size: 9 },
-    { id: 'banque_adresse', x: 920, y: 306, w: 143, h: 13, size: 9 },
-    { id: 'banque_cp', x: 1090, y: 306, w: 77, h: 13, size: 9 },
-    { id: 'teg', x: 777, y: 351, w: 154, h: 14, size: 9 },
-    { id: 'taux_nominal', x: 720, y: 368, w: 73, h: 14, size: 9 },
-    { id: 'montant_pret', x: 876, y: 368, w: 60, h: 14, size: 9 },
-    { id: 'nb_echeances', x: 758, y: 384, w: 90, h: 14, size: 9 },
-    { id: 'montant_echeances', x: 966, y: 384, w: 70, h: 14, size: 9 },
+    { id: 'acompte', x: 831, y: 198, w: 101, h: 14, size: 10, align: 'right', screenY: 202 },
+    { id: 'solde', x: 940, y: 219, w: 90, h: 14, size: 10, align: 'right', screenX: 932, screenY: 223 },
+    { id: 'organisme_bancaire', x: 752, y: 306, w: 99, h: 13, size: 9, screenY: 310 },
+    { id: 'banque_adresse', x: 920, y: 306, w: 143, h: 13, size: 9, screenY: 310 },
+    { id: 'banque_cp', x: 1090, y: 306, w: 77, h: 13, size: 9, screenY: 310 },
+    { id: 'teg', x: 777, y: 351, w: 154, h: 14, size: 9, screenY: 353 },
+    { id: 'taux_nominal', x: 720, y: 368, w: 73, h: 14, size: 9, screenY: 370 },
+    { id: 'montant_pret', x: 876, y: 368, w: 60, h: 14, size: 9, screenY: 370 },
+    { id: 'nb_echeances', x: 758, y: 384, w: 90, h: 14, size: 9, screenY: 386 },
+    { id: 'montant_echeances', x: 966, y: 384, w: 70, h: 14, size: 9, screenY: 386 },
     { id: 'date_installation', x: 750, y: 493, w: 180, h: 15, size: 10, inputType: 'date' },
     { id: 'fait_a', x: 689, y: 660, w: 140, h: 15, size: 10 },
     { id: 'date_signature', x: 1001, y: 662, w: 101, h: 15, size: 10, inputType: 'date', prefillToday: true },
@@ -142,10 +142,10 @@
   }
 
   function positionElement(element, field) {
-    element.style.left = `${field.x}px`;
-    element.style.top = `${field.y}px`;
-    element.style.width = `${field.w}px`;
-    element.style.height = `${field.h}px`;
+    element.style.left = `${field.screenX ?? field.x}px`;
+    element.style.top = `${field.screenY ?? field.y}px`;
+    element.style.width = `${field.screenW ?? field.w}px`;
+    element.style.height = `${field.screenH ?? field.h}px`;
   }
 
   function labelFor(id) {
